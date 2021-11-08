@@ -7,9 +7,9 @@ public class Main {
         enemy.attack(player1);
         player1.heal(player1);
         player1.attack(enemy);
-        System.out.println("Before levelUp() : " + player1.level);
+        System.out.println("Before levelUp() : " + player1.level.characterLevel);
         player1.levelUp();
-        System.out.println("After levelUp() : " + player1.level);
+        System.out.println("After levelUp() : " + player1.level.characterLevel);
         System.out.println("Fin");
     }
 
