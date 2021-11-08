@@ -1,5 +1,5 @@
-# EXO.03.RPG.08_11_21
- exo RPG pour EPSI
+# Exercice RPG Callisthenics EPSI
+ Lancer le Main pour tester !
  
  INSTRUCTIONS : 
  - Tous les personnages ont 1000 points vie au départ : OK
