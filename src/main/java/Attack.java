@@ -1,18 +1,15 @@
 public class Attack {
 
     public Attack(Character target) {
-        HeartPoints targetHealth = target.heartPoints;
+        System.out.println("La cible avait " + target.heartPoints.actualHeartPoints + " points de vie.");
 
-        System.out.println("La cible avait " + targetHealth.actualHeartPoints + " points de vie.");
+        target.heartPoints = target.removeDamageHeartPoints(target.heartPoints);
 
-        Integer damagePoints = new Damage().damagePoints;
-        target.damageReceived(damagePoints);
+        System.out.println("Elle a subit des points de dégâts.");
 
-        System.out.println("Elle a subit " + damagePoints + " points de dégâts.");
+        heartPointsCantBeNegative(target.heartPoints);
 
-        heartPointsCantBeNegative(targetHealth);
-
-        System.out.println("La cible a maintenant " + targetHealth.actualHeartPoints + " points de vie.\n");
+        System.out.println("La cible a maintenant " + target.heartPoints.actualHeartPoints + " points de vie.\n");
     }
 
     public void heartPointsCantBeNegative(HeartPoints targetHealth) {
@@ -22,4 +19,3 @@ public class Attack {
     }
 
 }
-

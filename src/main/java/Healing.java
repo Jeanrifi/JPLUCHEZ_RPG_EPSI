@@ -12,4 +12,5 @@ public class Healing {
             System.out.println("(Le sort de soin a échoué.)");
         }
     }
+
 }

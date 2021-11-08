@@ -10,4 +10,5 @@ public class Main {
         player1.levelUp();
         System.out.println("Fin");
     }
+
 }

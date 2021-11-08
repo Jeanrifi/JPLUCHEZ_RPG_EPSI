@@ -1,9 +1,13 @@
 public class HeartPoints {
-    protected Integer maximumHeartPoints;
+    protected Integer maximumHeartPoints = 1000;
     protected Integer actualHeartPoints;
 
     public HeartPoints() {
-        this.maximumHeartPoints = 1000;
         this.actualHeartPoints = this.maximumHeartPoints;
     }
+
+    public HeartPoints(Integer heartPoints) {
+        actualHeartPoints = heartPoints;
+    }
+
 }

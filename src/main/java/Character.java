@@ -8,7 +8,7 @@ public class Character {
     }
 
     public void levelUp() {
-        this.level.characterLevel += 1;
+        level.characterLevel += 1;
     }
 
     public Boolean isAliveAndCanBeHealed(Character character) {
@@ -26,17 +26,24 @@ public class Character {
         }
     }
 
-    public void healingReceived(Integer hpWon) {
-        this.heartPoints.actualHeartPoints += hpWon;
-    }
-
     public void attack(Character target) {
         if (isAliveAndCanBeHealed(target)) {
             new Attack(target);
         }
     }
 
-    public void damageReceived(Integer hpLost) {
-        this.heartPoints.actualHeartPoints -= hpLost;
+    public HeartPoints addHealHeartPoints(HeartPoints targetHeartPoints) {
+        Integer actualTargetHeartPoints = targetHeartPoints.actualHeartPoints;
+        Integer heartPointsWon = new Healing().healingPoints;
+
+        return new HeartPoints(actualTargetHeartPoints + heartPointsWon);
     }
+
+    public HeartPoints removeDamageHeartPoints(HeartPoints targetHeartPoints) {
+        Integer actualTargetHeartPoints = targetHeartPoints.actualHeartPoints;
+        Integer heartPointsLost = new Damage().damagePoints;
+
+        return new HeartPoints(actualTargetHeartPoints - heartPointsLost);
+    }
+
 }
